@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>mecanum_in_gazebo</name>
+  <version>0.1.0</version>
+<description>The mecanum_in_gazebo package</description>
+
+  <maintainer email="sudhanshupawar@rigebtellabs.com">Sudhanshu Pawar</maintainer>
+
+  <license>GPL-2.0</license>
+
+  <url type="website">https://www.linkedin.com/in/sudhanshu-pawar-21bb781b9/</url>
+
+  <author email="sudhanshupawar@rigebtellabs.com">Sudhanshu Pawar</author>
+
+  <buildtool_depend>catkin</buildtool_depend>
+  <build_depend>rospy</build_depend>
+  <build_export_depend>rospy</build_export_depend>
+  <exec_depend>rospy</exec_depend>
+
+  <export>
+  </export>
+
+</package>

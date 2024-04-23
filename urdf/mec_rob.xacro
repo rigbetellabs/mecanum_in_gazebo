@@ -1,0 +1,1148 @@
+<?xml version="1.0" ?>
+<robot name="mec_rob" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+<xacro:include filename="$(find mecanum_in_gazebo)/urdf/materials.xacro" />
+<xacro:include filename="$(find mecanum_in_gazebo)/urdf/mec_rob.trans" />
+<xacro:include filename="$(find mecanum_in_gazebo)/urdf/mec_rob.gazebo" />
+<link name="base_link">
+  <inertial>
+    <origin xyz="6.760415092149816e-05 -2.9513096198865094e-17 2.0788276408363705e-05" rpy="0 0 0"/>
+    <mass value="19.3528550466136"/>
+    <inertia ixx="0.07315" iyy="0.151641" izz="0.219727" ixy="-0.0" iyz="0.0" ixz="-2.7e-05"/>
+  </inertial>
+  <visual>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://mecanum_in_gazebo/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://mecanum_in_gazebo/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="wheel_frame_FL_1">
+  <inertial>
+    <origin xyz="-2.1897287448918723e-05 -0.023738528231967565 3.1378817485983033e-06" rpy="0 0 0"/>
+    <mass value="0.30282113324994747"/>
+    <inertia ixx="0.00016" iyy="0.000181" izz="0.000158" ixy="-1e-06" iyz="0.0" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.125 -0.15 -0.0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://mecanum_in_gazebo/meshes/wheel_frame_FL_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.125 -0.15 -0.0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://mecanum_in_gazebo/meshes/wheel_frame_FL_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="roller_14_1">
+  <inertial>
+    <origin xyz="-0.01730009422242043 -0.01664777121912278 -2.6367796834847468e-15" rpy="0 0 0"/>
+    <mass value="0.014233736590697255"/>
+    <inertia ixx="2e-06" iyy="2e-06" izz="2e-06" ixy="-1e-06" iyz="-0.0" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.142316 -0.142881 -0.04" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://mecanum_in_gazebo/meshes/roller_14_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.142316 -0.142881 -0.04" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://mecanum_in_gazebo/meshes/roller_14_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="roller_16_1">
+  <inertial>
+    <origin xyz="-0.01325231160541368 -0.01664777187914801 0.011119554128877593" rpy="0 0 0"/>
+    <mass value="0.01423373659069693"/>
+    <inertia ixx="2e-06" iyy="2e-06" izz="2e-06" ixy="-1e-06" iyz="1e-06" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.163976 -0.142881 -0.019512" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://mecanum_in_gazebo/meshes/roller_16_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.163976 -0.142881 -0.019512" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://mecanum_in_gazebo/meshes/roller_16_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="roller_13_1">
+  <inertial>
+    <origin xyz="-0.0030044941161637972 -0.016647462795977563 0.01703683072301009" rpy="0 0 0"/>
+    <mass value="0.014233736590696914"/>
+    <inertia ixx="2e-06" iyy="2e-06" izz="2e-06" ixy="-0.0" iyz="1e-06" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.167394 -0.142914 0.010075" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://mecanum_in_gazebo/meshes/roller_13_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.167394 -0.142914 0.010075" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://mecanum_in_gazebo/meshes/roller_13_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="roller_12_1">
+  <inertial>
+    <origin xyz="0.008650090286065698 -0.016647462135951696 0.01498198481151108" rpy="0 0 0"/>
+    <mass value="0.01423373659069688"/>
+    <inertia ixx="2e-06" iyy="2e-06" izz="2e-06" ixy="0.0" iyz="1e-06" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.150999 -0.142914 0.034968" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://mecanum_in_gazebo/meshes/roller_12_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.150999 -0.142914 0.034968" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://mecanum_in_gazebo/meshes/roller_12_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="roller_15_1">
+  <inertial>
+    <origin xyz="0.016255980142600823 -0.016647462135952473 0.005916818201972901" rpy="0 0 0"/>
+    <mass value="0.014233736590697089"/>
+    <inertia ixx="2e-06" iyy="2e-06" izz="2e-06" ixy="1e-06" iyz="0.0" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.12244 -0.142914 0.043499" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://mecanum_in_gazebo/meshes/roller_15_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.12244 -0.142914 0.043499" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://mecanum_in_gazebo/meshes/roller_15_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="roller_17_1">
+  <inertial>
+    <origin xyz="0.01625636867654784 -0.016647462135950142 -0.005917227864846754" rpy="0 0 0"/>
+    <mass value="0.014233736590697006"/>
+    <inertia ixx="2e-06" iyy="2e-06" izz="2e-06" ixy="1e-06" iyz="-0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.095078 -0.142914 0.031676" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://mecanum_in_gazebo/meshes/roller_17_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.095078 -0.142914 0.031676" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://mecanum_in_gazebo/meshes/roller_17_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="roller_18_1">
+  <inertial>
+    <origin xyz="0.008650058329703877 -0.016647462793830475 -0.014981985403539554" rpy="0 0 0"/>
+    <mass value="0.01423373659069696"/>
+    <inertia ixx="2e-06" iyy="2e-06" izz="2e-06" ixy="0.0" iyz="-1e-06" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.081717 -0.142914 0.005032" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://mecanum_in_gazebo/meshes/roller_18_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.081717 -0.142914 0.005032" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://mecanum_in_gazebo/meshes/roller_18_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="roller_10_1">
+  <inertial>
+    <origin xyz="-0.0030041143571402362 -0.016647462795977036 -0.017036976509655844" rpy="0 0 0"/>
+    <mass value="0.014233736590696993"/>
+    <inertia ixx="2e-06" iyy="2e-06" izz="2e-06" ixy="-0.0" iyz="-1e-06" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.088609 -0.142914 -0.023967" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://mecanum_in_gazebo/meshes/roller_10_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.088609 -0.142914 -0.023967" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://mecanum_in_gazebo/meshes/roller_10_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="roller_11_1">
+  <inertial>
+    <origin xyz="-0.013251875204888214 -0.016647462795978424 -0.011119602623583382" rpy="0 0 0"/>
+    <mass value="0.014233736590697477"/>
+    <inertia ixx="2e-06" iyy="2e-06" izz="2e-06" ixy="-1e-06" iyz="-1e-06" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.112528 -0.142914 -0.041751" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://mecanum_in_gazebo/meshes/roller_11_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.112528 -0.142914 -0.041751" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://mecanum_in_gazebo/meshes/roller_11_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="wheel_frame_FR_1">
+  <inertial>
+    <origin xyz="-2.1897287449737513e-05 0.02375019110552612 3.1378817487137666e-06" rpy="0 0 0"/>
+    <mass value="0.30282113324994836"/>
+    <inertia ixx="0.000161" iyy="0.000181" izz="0.000159" ixy="-0.0" iyz="0.0" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.125 0.15 -0.0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://mecanum_in_gazebo/meshes/wheel_frame_FR_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.125 0.15 -0.0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://mecanum_in_gazebo/meshes/wheel_frame_FR_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="roller_7_1">
+  <inertial>
+    <origin xyz="0.017300094908289848 -0.01664777187914701 -1.2073675392798577e-15" rpy="0 0 0"/>
+    <mass value="0.014233736590697038"/>
+    <inertia ixx="2e-06" iyy="2e-06" izz="2e-06" ixy="1e-06" iyz="-0.0" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.107684 0.109619 -0.04" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://mecanum_in_gazebo/meshes/roller_7_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.107684 0.109619 -0.04" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://mecanum_in_gazebo/meshes/roller_7_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="roller_5_1">
+  <inertial>
+    <origin xyz="0.013252319854933331 -0.016647771219124002 -0.011119998238488766" rpy="0 0 0"/>
+    <mass value="0.01423373659069685"/>
+    <inertia ixx="2e-06" iyy="2e-06" izz="2e-06" ixy="1e-06" iyz="-1e-06" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.137447 0.109619 -0.041772" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://mecanum_in_gazebo/meshes/roller_5_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.137447 0.109619 -0.041772" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://mecanum_in_gazebo/meshes/roller_5_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="roller_3_1">
+  <inertial>
+    <origin xyz="0.00300454811119516 -0.01664777121912328 -0.017036408760246494" rpy="0 0 0"/>
+    <mass value="0.014233736590696551"/>
+    <inertia ixx="2e-06" iyy="2e-06" izz="2e-06" ixy="0.0" iyz="-1e-06" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.161385 0.109619 -0.023998" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://mecanum_in_gazebo/meshes/roller_3_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.161385 0.109619 -0.023998" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://mecanum_in_gazebo/meshes/roller_3_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="roller_6_1">
+  <inertial>
+    <origin xyz="-0.008650030959834937 -0.016647771219122087 -0.0149822251925512" rpy="0 0 0"/>
+    <mass value="0.014233736590697"/>
+    <inertia ixx="2e-06" iyy="2e-06" izz="2e-06" ixy="-0.0" iyz="-1e-06" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.168299 0.109619 0.005004" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://mecanum_in_gazebo/meshes/roller_6_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.168299 0.109619 0.005004" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://mecanum_in_gazebo/meshes/roller_6_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="roller_8_1">
+  <inertial>
+    <origin xyz="-0.01625624772515452 -0.016647771219123614 -0.005917264735106481" rpy="0 0 0"/>
+    <mass value="0.01423373659069701"/>
+    <inertia ixx="2e-06" iyy="2e-06" izz="2e-06" ixy="-1e-06" iyz="-0.0" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.154952 0.109619 0.031665" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://mecanum_in_gazebo/meshes/roller_8_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.154952 0.109619 0.031665" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://mecanum_in_gazebo/meshes/roller_8_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="roller_9_1">
+  <inertial>
+    <origin xyz="-0.01625685983158369 -0.01664777188086597 0.005916855307413364" rpy="0 0 0"/>
+    <mass value="0.014233736590696988"/>
+    <inertia ixx="2e-06" iyy="2e-06" izz="2e-06" ixy="-1e-06" iyz="0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.127591 0.109619 0.04351" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://mecanum_in_gazebo/meshes/roller_9_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.127591 0.109619 0.04351" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://mecanum_in_gazebo/meshes/roller_9_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="roller_4_1">
+  <inertial>
+    <origin xyz="-0.008650063605525643 -0.016647771879150397 0.014982225786529486" rpy="0 0 0"/>
+    <mass value="0.01423373659069714"/>
+    <inertia ixx="2e-06" iyy="2e-06" izz="2e-06" ixy="-0.0" iyz="1e-06" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.099017 0.109619 0.034996" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://mecanum_in_gazebo/meshes/roller_4_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.099017 0.109619 0.034996" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://mecanum_in_gazebo/meshes/roller_4_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="roller_1_1">
+  <inertial>
+    <origin xyz="0.003003927989318908 -0.01664777187914948 0.017037263649050942" rpy="0 0 0"/>
+    <mass value="0.014233736590697087"/>
+    <inertia ixx="2e-06" iyy="2e-06" izz="2e-06" ixy="0.0" iyz="1e-06" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.082601 0.109619 0.010107" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://mecanum_in_gazebo/meshes/roller_1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.082601 0.109619 0.010107" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://mecanum_in_gazebo/meshes/roller_1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="roller_2_1">
+  <inertial>
+    <origin xyz="0.013252311605417427 -0.016647771879147594 0.011119554128875348" rpy="0 0 0"/>
+    <mass value="0.014233736590697151"/>
+    <inertia ixx="2e-06" iyy="2e-06" izz="2e-06" ixy="1e-06" iyz="1e-06" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.086024 0.109619 -0.019512" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://mecanum_in_gazebo/meshes/roller_2_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.086024 0.109619 -0.019512" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://mecanum_in_gazebo/meshes/roller_2_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="wheel_frame_BL_1">
+  <inertial>
+    <origin xyz="3.1733464467276207e-10 -0.023749808894473867 -7.519251293838056e-14" rpy="0 0 0"/>
+    <mass value="0.30282113324994536"/>
+    <inertia ixx="0.000161" iyy="0.000183" izz="0.000161" ixy="-0.0" iyz="-0.0" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.125 -0.15 -0.0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://mecanum_in_gazebo/meshes/wheel_frame_BL_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0.125 -0.15 -0.0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://mecanum_in_gazebo/meshes/wheel_frame_BL_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="roller_23_1">
+  <inertial>
+    <origin xyz="0.017300094222420792 -0.016647771219122837 2.5049406993105094e-15" rpy="0 0 0"/>
+    <mass value="0.014233736590696983"/>
+    <inertia ixx="2e-06" iyy="2e-06" izz="2e-06" ixy="1e-06" iyz="-0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.142316 -0.142881 -0.04" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://mecanum_in_gazebo/meshes/roller_23_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0.142316 -0.142881 -0.04" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://mecanum_in_gazebo/meshes/roller_23_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="roller_22_1">
+  <inertial>
+    <origin xyz="0.013252320380338786 -0.016647771879150813 -0.011119998679360706" rpy="0 0 0"/>
+    <mass value="0.014233736590697042"/>
+    <inertia ixx="2e-06" iyy="2e-06" izz="2e-06" ixy="1e-06" iyz="-1e-06" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.112553 -0.142881 -0.041772" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://mecanum_in_gazebo/meshes/roller_22_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0.112553 -0.142881 -0.041772" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://mecanum_in_gazebo/meshes/roller_22_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="roller_25_1">
+  <inertial>
+    <origin xyz="0.003004548230298998 -0.016647771879146955 -0.01703640943569361" rpy="0 0 0"/>
+    <mass value="0.014233736590697047"/>
+    <inertia ixx="2e-06" iyy="2e-06" izz="2e-06" ixy="0.0" iyz="-1e-06" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.088615 -0.142881 -0.023998" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://mecanum_in_gazebo/meshes/roller_25_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0.088615 -0.142881 -0.023998" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://mecanum_in_gazebo/meshes/roller_25_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="roller_21_1">
+  <inertial>
+    <origin xyz="-0.008650030959835658 -0.016647771219122615 -0.014982225192550146" rpy="0 0 0"/>
+    <mass value="0.014233736590696936"/>
+    <inertia ixx="2e-06" iyy="2e-06" izz="2e-06" ixy="-0.0" iyz="-1e-06" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.081701 -0.142881 0.005004" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://mecanum_in_gazebo/meshes/roller_21_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0.081701 -0.142881 0.005004" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://mecanum_in_gazebo/meshes/roller_21_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="roller_26_1">
+  <inertial>
+    <origin xyz="-0.016256248369660345 -0.016647771879147844 -0.005917264969692589" rpy="0 0 0"/>
+    <mass value="0.014233736590697033"/>
+    <inertia ixx="2e-06" iyy="2e-06" izz="2e-06" ixy="-1e-06" iyz="-0.0" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.095048 -0.142881 0.031665" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://mecanum_in_gazebo/meshes/roller_26_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0.095048 -0.142881 0.031665" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://mecanum_in_gazebo/meshes/roller_26_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="roller_27_1">
+  <inertial>
+    <origin xyz="-0.01625685918905319 -0.016647771222854157 0.005916855073576734" rpy="0 0 0"/>
+    <mass value="0.014233736590697002"/>
+    <inertia ixx="2e-06" iyy="2e-06" izz="2e-06" ixy="-1e-06" iyz="0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.122409 -0.142881 0.04351" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://mecanum_in_gazebo/meshes/roller_27_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0.122409 -0.142881 0.04351" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://mecanum_in_gazebo/meshes/roller_27_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="roller_20_1">
+  <inertial>
+    <origin xyz="-0.008650063605519703 -0.016647771879149093 0.01498222578652882" rpy="0 0 0"/>
+    <mass value="0.014233736590696985"/>
+    <inertia ixx="2e-06" iyy="2e-06" izz="2e-06" ixy="-0.0" iyz="1e-06" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.150983 -0.142881 0.034996" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://mecanum_in_gazebo/meshes/roller_20_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0.150983 -0.142881 0.034996" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://mecanum_in_gazebo/meshes/roller_20_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="roller_19_1">
+  <inertial>
+    <origin xyz="0.0030039278702186645 -0.01664777121912278 0.017037262973597655" rpy="0 0 0"/>
+    <mass value="0.014233736590697066"/>
+    <inertia ixx="2e-06" iyy="2e-06" izz="2e-06" ixy="0.0" iyz="1e-06" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.167399 -0.142881 0.010107" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://mecanum_in_gazebo/meshes/roller_19_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0.167399 -0.142881 0.010107" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://mecanum_in_gazebo/meshes/roller_19_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="roller_24_1">
+  <inertial>
+    <origin xyz="0.0132523116054169 -0.016647771879146317 0.011119554128877464" rpy="0 0 0"/>
+    <mass value="0.014233736590697"/>
+    <inertia ixx="2e-06" iyy="2e-06" izz="2e-06" ixy="1e-06" iyz="1e-06" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.163976 -0.142881 -0.019512" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://mecanum_in_gazebo/meshes/roller_24_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0.163976 -0.142881 -0.019512" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://mecanum_in_gazebo/meshes/roller_24_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="wheel_frame_BR_1">
+  <inertial>
+    <origin xyz="3.1733479732842795e-10 0.023761471768032644 -7.514689871510898e-14" rpy="0 0 0"/>
+    <mass value="0.30282113324994864"/>
+    <inertia ixx="0.00016" iyy="0.000183" izz="0.00016" ixy="0.0" iyz="0.0" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.125 0.15 -0.0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://mecanum_in_gazebo/meshes/wheel_frame_BR_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0.125 0.15 -0.0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://mecanum_in_gazebo/meshes/wheel_frame_BR_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="roller_34_1">
+  <inertial>
+    <origin xyz="-0.01730009422242071 -0.016647771219125196 -1.0685896612017132e-15" rpy="0 0 0"/>
+    <mass value="0.014233736590696927"/>
+    <inertia ixx="2e-06" iyy="2e-06" izz="2e-06" ixy="-1e-06" iyz="0.0" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.107684 0.109619 -0.04" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://mecanum_in_gazebo/meshes/roller_34_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0.107684 0.109619 -0.04" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://mecanum_in_gazebo/meshes/roller_34_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="roller_30_1">
+  <inertial>
+    <origin xyz="-0.013252311605417719 -0.016647771879147177 0.011119554128875175" rpy="0 0 0"/>
+    <mass value="0.014233736590697087"/>
+    <inertia ixx="2e-06" iyy="2e-06" izz="2e-06" ixy="-1e-06" iyz="1e-06" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.086024 0.109619 -0.019512" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://mecanum_in_gazebo/meshes/roller_30_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0.086024 0.109619 -0.019512" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://mecanum_in_gazebo/meshes/roller_30_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="roller_32_1">
+  <inertial>
+    <origin xyz="-0.0030039279893207677 -0.01664777187914715 0.017037263649050297" rpy="0 0 0"/>
+    <mass value="0.014233736590697054"/>
+    <inertia ixx="2e-06" iyy="2e-06" izz="2e-06" ixy="-0.0" iyz="1e-06" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.082601 0.109619 0.010107" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://mecanum_in_gazebo/meshes/roller_32_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0.082601 0.109619 0.010107" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://mecanum_in_gazebo/meshes/roller_32_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="roller_31_1">
+  <inertial>
+    <origin xyz="0.008650063262586508 -0.01664777121912009 0.014982225192549992" rpy="0 0 0"/>
+    <mass value="0.01423373659069689"/>
+    <inertia ixx="2e-06" iyy="2e-06" izz="2e-06" ixy="0.0" iyz="1e-06" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.099017 0.109619 0.034996" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://mecanum_in_gazebo/meshes/roller_31_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0.099017 0.109619 0.034996" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://mecanum_in_gazebo/meshes/roller_31_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="roller_29_1">
+  <inertial>
+    <origin xyz="0.016256859835714538 -0.016647771879146372 0.0059168553068168275" rpy="0 0 0"/>
+    <mass value="0.014233736590697115"/>
+    <inertia ixx="2e-06" iyy="2e-06" izz="2e-06" ixy="1e-06" iyz="0.0" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.127591 0.109619 0.04351" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://mecanum_in_gazebo/meshes/roller_29_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0.127591 0.109619 0.04351" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://mecanum_in_gazebo/meshes/roller_29_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="roller_28_1">
+  <inertial>
+    <origin xyz="-0.013252320380341881 -0.016647771879148177 -0.011119998679359859" rpy="0 0 0"/>
+    <mass value="0.014233736590697"/>
+    <inertia ixx="2e-06" iyy="2e-06" izz="2e-06" ixy="-1e-06" iyz="-1e-06" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.137447 0.109619 -0.041772" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://mecanum_in_gazebo/meshes/roller_28_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0.137447 0.109619 -0.041772" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://mecanum_in_gazebo/meshes/roller_28_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="roller_35_1">
+  <inertial>
+    <origin xyz="0.01625624772515405 -0.01664777121912206 -0.005917264735111838" rpy="0 0 0"/>
+    <mass value="0.01423373659069706"/>
+    <inertia ixx="2e-06" iyy="2e-06" izz="2e-06" ixy="1e-06" iyz="-0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.154952 0.109619 0.031665" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://mecanum_in_gazebo/meshes/roller_35_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0.154952 0.109619 0.031665" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://mecanum_in_gazebo/meshes/roller_35_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="roller_36_1">
+  <inertial>
+    <origin xyz="0.00865003096434197 -0.016647771218981755 -0.01498222519244071" rpy="0 0 0"/>
+    <mass value="0.014233736590696964"/>
+    <inertia ixx="2e-06" iyy="2e-06" izz="2e-06" ixy="0.0" iyz="-1e-06" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.168299 0.109619 0.005004" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://mecanum_in_gazebo/meshes/roller_36_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0.168299 0.109619 0.005004" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://mecanum_in_gazebo/meshes/roller_36_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="roller_33_1">
+  <inertial>
+    <origin xyz="-0.003004114238040423 -0.01664746213595243 -0.017036975834204805" rpy="0 0 0"/>
+    <mass value="0.01423373659069702"/>
+    <inertia ixx="2e-06" iyy="2e-06" izz="2e-06" ixy="-0.0" iyz="-1e-06" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.161391 0.109586 -0.023967" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://mecanum_in_gazebo/meshes/roller_33_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0.161391 0.109586 -0.023967" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://mecanum_in_gazebo/meshes/roller_33_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<joint name="front_left_joint" type="continuous">
+  <origin xyz="0.125 0.15 0.0" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="wheel_frame_FL_1"/>
+  <axis xyz="0.0 1.0 0.0"/>
+</joint>
+
+<joint name="Revolute_57" type="continuous">
+  <origin xyz="0.017316 -0.007119 0.04" rpy="0 0 0"/>
+  <parent link="wheel_frame_FL_1"/>
+  <child link="roller_14_1"/>
+  <axis xyz="0.720551 0.693402 -0.0"/>
+</joint>
+
+<joint name="Revolute_58" type="continuous">
+  <origin xyz="0.038976 -0.007119 0.019512" rpy="0 0 0"/>
+  <parent link="wheel_frame_FL_1"/>
+  <child link="roller_16_1"/>
+  <axis xyz="0.551974 0.693402 -0.463161"/>
+</joint>
+
+<joint name="Revolute_59" type="continuous">
+  <origin xyz="0.042394 -0.007086 -0.010075" rpy="0 0 0"/>
+  <parent link="wheel_frame_FL_1"/>
+  <child link="roller_13_1"/>
+  <axis xyz="-0.125122 -0.693402 0.709604"/>
+</joint>
+
+<joint name="Revolute_60" type="continuous">
+  <origin xyz="0.025999 -0.007086 -0.034968" rpy="0 0 0"/>
+  <parent link="wheel_frame_FL_1"/>
+  <child link="roller_12_1"/>
+  <axis xyz="0.360276 -0.693402 0.624016"/>
+</joint>
+
+<joint name="Revolute_61" type="continuous">
+  <origin xyz="-0.00256 -0.007086 -0.043499" rpy="0 0 0"/>
+  <parent link="wheel_frame_FL_1"/>
+  <child link="roller_15_1"/>
+  <axis xyz="0.677097 -0.693402 0.246443"/>
+</joint>
+
+<joint name="Revolute_62" type="continuous">
+  <origin xyz="-0.029922 -0.007086 -0.031676" rpy="0 0 0"/>
+  <parent link="wheel_frame_FL_1"/>
+  <child link="roller_17_1"/>
+  <axis xyz="0.677097 -0.693402 -0.246443"/>
+</joint>
+
+<joint name="Revolute_63" type="continuous">
+  <origin xyz="-0.043283 -0.007086 -0.005032" rpy="0 0 0"/>
+  <parent link="wheel_frame_FL_1"/>
+  <child link="roller_18_1"/>
+  <axis xyz="0.360276 -0.693402 -0.624016"/>
+</joint>
+
+<joint name="Revolute_64" type="continuous">
+  <origin xyz="-0.036391 -0.007086 0.023967" rpy="0 0 0"/>
+  <parent link="wheel_frame_FL_1"/>
+  <child link="roller_10_1"/>
+  <axis xyz="-0.125122 -0.693402 -0.709604"/>
+</joint>
+
+<joint name="Revolute_65" type="continuous">
+  <origin xyz="-0.012472 -0.007086 0.041751" rpy="0 0 0"/>
+  <parent link="wheel_frame_FL_1"/>
+  <child link="roller_11_1"/>
+  <axis xyz="-0.551974 -0.693402 -0.463161"/>
+</joint>
+
+<joint name="front_right_joint" type="continuous">
+  <origin xyz="0.125 -0.15 0.0" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="wheel_frame_FR_1"/>
+  <axis xyz="0.0 1.0 0.0"/>
+</joint>
+
+<joint name="Revolute_67" type="continuous">
+  <origin xyz="-0.017316 0.040381 0.04" rpy="0 0 0"/>
+  <parent link="wheel_frame_FR_1"/>
+  <child link="roller_7_1"/>
+  <axis xyz="0.720551 -0.693402 -0.0"/>
+</joint>
+
+<joint name="Revolute_68" type="continuous">
+  <origin xyz="0.012447 0.040381 0.041772" rpy="0 0 0"/>
+  <parent link="wheel_frame_FR_1"/>
+  <child link="roller_5_1"/>
+  <axis xyz="0.551974 -0.693402 -0.463161"/>
+</joint>
+
+<joint name="Revolute_69" type="continuous">
+  <origin xyz="0.036385 0.040381 0.023998" rpy="0 0 0"/>
+  <parent link="wheel_frame_FR_1"/>
+  <child link="roller_3_1"/>
+  <axis xyz="0.125122 -0.693402 -0.709604"/>
+</joint>
+
+<joint name="Revolute_70" type="continuous">
+  <origin xyz="0.043299 0.040381 -0.005004" rpy="0 0 0"/>
+  <parent link="wheel_frame_FR_1"/>
+  <child link="roller_6_1"/>
+  <axis xyz="-0.360276 -0.693402 -0.624016"/>
+</joint>
+
+<joint name="Revolute_71" type="continuous">
+  <origin xyz="0.029952 0.040381 -0.031665" rpy="0 0 0"/>
+  <parent link="wheel_frame_FR_1"/>
+  <child link="roller_8_1"/>
+  <axis xyz="-0.677097 -0.693402 -0.246443"/>
+</joint>
+
+<joint name="Revolute_72" type="continuous">
+  <origin xyz="0.002591 0.040381 -0.04351" rpy="0 0 0"/>
+  <parent link="wheel_frame_FR_1"/>
+  <child link="roller_9_1"/>
+  <axis xyz="-0.677097 -0.693402 0.246443"/>
+</joint>
+
+<joint name="Revolute_73" type="continuous">
+  <origin xyz="-0.025983 0.040381 -0.034996" rpy="0 0 0"/>
+  <parent link="wheel_frame_FR_1"/>
+  <child link="roller_4_1"/>
+  <axis xyz="-0.360276 -0.693402 0.624016"/>
+</joint>
+
+<joint name="Revolute_74" type="continuous">
+  <origin xyz="-0.042399 0.040381 -0.010107" rpy="0 0 0"/>
+  <parent link="wheel_frame_FR_1"/>
+  <child link="roller_1_1"/>
+  <axis xyz="0.125122 -0.693402 0.709604"/>
+</joint>
+
+<joint name="Revolute_75" type="continuous">
+  <origin xyz="-0.038976 0.040381 0.019512" rpy="0 0 0"/>
+  <parent link="wheel_frame_FR_1"/>
+  <child link="roller_2_1"/>
+  <axis xyz="0.551974 -0.693402 0.463161"/>
+</joint>
+
+<joint name="back_left_joint" type="continuous">
+  <origin xyz="-0.125 0.15 0.0" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="wheel_frame_BL_1"/>
+  <axis xyz="0.0 1.0 0.0"/>
+</joint>
+
+<joint name="Revolute_77" type="continuous">
+  <origin xyz="-0.017316 -0.007119 0.04" rpy="0 0 0"/>
+  <parent link="wheel_frame_BL_1"/>
+  <child link="roller_23_1"/>
+  <axis xyz="0.720551 -0.693402 -0.0"/>
+</joint>
+
+<joint name="Revolute_78" type="continuous">
+  <origin xyz="0.012447 -0.007119 0.041772" rpy="0 0 0"/>
+  <parent link="wheel_frame_BL_1"/>
+  <child link="roller_22_1"/>
+  <axis xyz="0.551974 -0.693402 -0.463161"/>
+</joint>
+
+<joint name="Revolute_79" type="continuous">
+  <origin xyz="0.036385 -0.007119 0.023998" rpy="0 0 0"/>
+  <parent link="wheel_frame_BL_1"/>
+  <child link="roller_25_1"/>
+  <axis xyz="0.125122 -0.693402 -0.709604"/>
+</joint>
+
+<joint name="Revolute_80" type="continuous">
+  <origin xyz="0.043299 -0.007119 -0.005004" rpy="0 0 0"/>
+  <parent link="wheel_frame_BL_1"/>
+  <child link="roller_21_1"/>
+  <axis xyz="-0.360276 -0.693402 -0.624016"/>
+</joint>
+
+<joint name="Revolute_81" type="continuous">
+  <origin xyz="0.029952 -0.007119 -0.031665" rpy="0 0 0"/>
+  <parent link="wheel_frame_BL_1"/>
+  <child link="roller_26_1"/>
+  <axis xyz="-0.677097 -0.693402 -0.246443"/>
+</joint>
+
+<joint name="Revolute_82" type="continuous">
+  <origin xyz="0.002591 -0.007119 -0.04351" rpy="0 0 0"/>
+  <parent link="wheel_frame_BL_1"/>
+  <child link="roller_27_1"/>
+  <axis xyz="-0.677097 -0.693402 0.246443"/>
+</joint>
+
+<joint name="Revolute_83" type="continuous">
+  <origin xyz="-0.025983 -0.007119 -0.034996" rpy="0 0 0"/>
+  <parent link="wheel_frame_BL_1"/>
+  <child link="roller_20_1"/>
+  <axis xyz="-0.360276 -0.693402 0.624016"/>
+</joint>
+
+<joint name="Revolute_84" type="continuous">
+  <origin xyz="-0.042399 -0.007119 -0.010107" rpy="0 0 0"/>
+  <parent link="wheel_frame_BL_1"/>
+  <child link="roller_19_1"/>
+  <axis xyz="0.125122 -0.693402 0.709604"/>
+</joint>
+
+<joint name="Revolute_85" type="continuous">
+  <origin xyz="-0.038976 -0.007119 0.019512" rpy="0 0 0"/>
+  <parent link="wheel_frame_BL_1"/>
+  <child link="roller_24_1"/>
+  <axis xyz="0.551974 -0.693402 0.463161"/>
+</joint>
+
+<joint name="back_right_joint" type="continuous">
+  <origin xyz="-0.125 -0.15 0.0" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="wheel_frame_BR_1"/>
+  <axis xyz="0.0 1.0 0.0"/>
+</joint>
+
+<joint name="Revolute_87" type="continuous">
+  <origin xyz="0.017316 0.040381 0.04" rpy="0 0 0"/>
+  <parent link="wheel_frame_BR_1"/>
+  <child link="roller_34_1"/>
+  <axis xyz="0.720551 0.693402 -0.0"/>
+</joint>
+
+<joint name="Revolute_88" type="continuous">
+  <origin xyz="0.038976 0.040381 0.019512" rpy="0 0 0"/>
+  <parent link="wheel_frame_BR_1"/>
+  <child link="roller_30_1"/>
+  <axis xyz="0.551974 0.693402 -0.463161"/>
+</joint>
+
+<joint name="Revolute_89" type="continuous">
+  <origin xyz="0.042399 0.040381 -0.010107" rpy="0 0 0"/>
+  <parent link="wheel_frame_BR_1"/>
+  <child link="roller_32_1"/>
+  <axis xyz="0.125122 0.693402 -0.709604"/>
+</joint>
+
+<joint name="Revolute_90" type="continuous">
+  <origin xyz="0.025983 0.040381 -0.034996" rpy="0 0 0"/>
+  <parent link="wheel_frame_BR_1"/>
+  <child link="roller_31_1"/>
+  <axis xyz="-0.360276 0.693402 -0.624016"/>
+</joint>
+
+<joint name="Revolute_91" type="continuous">
+  <origin xyz="-0.002591 0.040381 -0.04351" rpy="0 0 0"/>
+  <parent link="wheel_frame_BR_1"/>
+  <child link="roller_29_1"/>
+  <axis xyz="-0.677097 0.693402 -0.246443"/>
+</joint>
+
+<joint name="Revolute_92" type="continuous">
+  <origin xyz="-0.012447 0.040381 0.041772" rpy="0 0 0"/>
+  <parent link="wheel_frame_BR_1"/>
+  <child link="roller_28_1"/>
+  <axis xyz="0.551974 0.693402 0.463161"/>
+</joint>
+
+<joint name="Revolute_93" type="continuous">
+  <origin xyz="-0.029952 0.040381 -0.031665" rpy="0 0 0"/>
+  <parent link="wheel_frame_BR_1"/>
+  <child link="roller_35_1"/>
+  <axis xyz="-0.677097 0.693402 0.246443"/>
+</joint>
+
+<joint name="Revolute_94" type="continuous">
+  <origin xyz="-0.043299 0.040381 -0.005004" rpy="0 0 0"/>
+  <parent link="wheel_frame_BR_1"/>
+  <child link="roller_36_1"/>
+  <axis xyz="-0.360276 0.693402 0.624016"/>
+</joint>
+
+<joint name="Revolute_95" type="continuous">
+  <origin xyz="-0.036391 0.040414 0.023967" rpy="0 0 0"/>
+  <parent link="wheel_frame_BR_1"/>
+  <child link="roller_33_1"/>
+  <axis xyz="-0.125122 -0.693402 -0.709604"/>
+</joint>
+
+</robot>
